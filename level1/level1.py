@@ -7,13 +7,15 @@ print(current_location)
 
 # Print name of current level.
 current_level = os.path.basename(__file__)[0:-3]
-print(current_level)
+print("NOW AT LEVEL " + current_level[-1])
 
 input_files_location = current_location + "\\" + current_level + "\\" + current_level
 input_files_paths = [
     input_files_location + "\\" + input_file_name
     for input_file_name in os.listdir(input_files_location)
+    if ".in" in input_file_name
 ]
+
 print("INPUT FILES PATHS:")
 for input_files_path in input_files_paths:
     print(input_files_path)
@@ -33,13 +35,12 @@ def read_input_file(input_file_path):
     return number_on_first_line, lines_without_first
 
 
-current_input_file_path = input_files_paths[3]
-print("current_input_file_path:", current_input_file_path)
+current_input_file_path = input_files_paths[1]
+print("NOW PROCESSING FILE " + current_input_file_path + "...")
 number_on_first_line, lines_of_file = read_input_file(current_input_file_path)
-# print(lines_of_file[0])
+
 sums = []
 for line_index in range(0, len(lines_of_file)):
-    # print(sum(line))
     if line_index == len(lines_of_file) - 1:
         sums.append(str(sum(lines_of_file[line_index])))
     else:
