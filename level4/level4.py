@@ -41,7 +41,7 @@ print("NOW PROCESSING FILE " + current_input_file_path + "...")
 number_on_first_line, lines_of_file = read_input_file(current_input_file_path)
 
 
-###################### ACTUAL SOLUTION FOR THIS LEVEL ######################
+###################### ACTUAL SOLUTION FOR THIS LEVEL #######################
 
 
 def sgn(x):
